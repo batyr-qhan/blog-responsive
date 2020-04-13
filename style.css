@@ -1,0 +1,269 @@
+/* ------ main layout --------- */
+
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  position: relative;
+  font-family: monospace;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  top: 0;
+  overflow: hidden;
+  position: fixed;
+  background: #0082e6;
+  height: 80px;
+  width: 100%;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  margin-top: 80px;
+}
+
+.footer {
+  height: 150px;
+  position: relative;
+  bottom: 0;
+  margin-top: auto;
+  width: 100%;
+  text-align: center;
+  background-color: #2c3e50;
+  color: white;
+}
+
+/* ---x--- main layout -----x---- */
+
+/* ------ navbar style -------- */
+
+.navbar__logo {
+  color: white;
+  font-size: 35px;
+  line-height: 80px;
+  padding: 0 100px;
+  font-weight: bold;
+}
+
+.navbar__list {
+  float: right;
+  margin-right: 20px;
+}
+
+.navbar__item {
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+}
+
+.navbar__link {
+  color: white;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+.navbar__link.active,
+.navbar__link:hover {
+  background: #1b9bff;
+  transition: .5s;
+}
+
+.navbar__checkbtn {
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+
+.navbar__check {
+  display: none;
+}
+
+@media (max-width: 952px) {
+  .navbar__logo {
+    font-size: 30px;
+    padding-left: 50px;
+  }
+
+  .navbar__link {
+    font-size: 16px;
+  }
+}
+
+@media(max-width: 858px) {
+  .navbar__checkbtn {
+    display: block;
+  }
+
+  .navbar__list {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+  }
+
+  .navbar__item {
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+
+  .navbar__link {
+    font-size: 20px;
+  }
+
+  .navbar__link:hover,
+  .navbar__link.active {
+    background: none;
+    color: #0082e6
+  }
+
+  .navbar__check:checked~.navbar__list {
+    left: 0;
+  }
+}
+
+/* ---x--- navbar layout ----x---- */
+
+/* ------ post card layout -------- */
+
+.post {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 350px;
+  width: 280px;
+  margin: 30px 50px;
+  padding: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.post__image {
+  height: 50%;
+}
+
+.post_description {
+  float: inline-end;
+}
+
+.description {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 10px;
+  color: grey;
+}
+
+.description__avatar {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin: 0 10px 0 0;
+}
+
+/* ---x--- post card layout ----x---- */
+
+/* -------footer-------- */
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+}
+
+.footer__social-media a {
+  color: white;
+  margin-right: 25px;
+  font-size: 22px;
+  text-decoration: none;
+  transition: .3s linear;
+}
+
+.footer__social-media a:hover {
+  color: #0082e6;
+}
+
+.footer__right h1 {
+  font-size: 26px;
+}
+
+.footer__border {
+  width: 100px;
+  height: 1px;
+  background: white;
+}
+
+.footer__form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 10px 0;
+}
+
+.footer__input {
+  flex: 1;
+  padding: 18px 40px;
+  font-size: 16px;
+  color: white;
+  background: #0082e6;
+  border: none;
+  font-weight: 700;
+  outline: none;
+  border-radius: 3px;
+  min-width: 260px;
+}
+
+.footer__btn {
+  padding: 18px 40px;
+  font-size: 16px;
+  color: white;
+  background: #0082e6;
+  border: none;
+  font-weight: 700;
+  outline: none;
+  border-radius: 3px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.footer__btn:hover {
+  opacity: .7;
+}
+
+@media screen and (max-width: 700px) {
+  .footer__right {
+    display: none;
+  }
+} 
+
+/* ---x---footer----x--- */
